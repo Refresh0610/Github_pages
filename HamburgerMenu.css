@@ -1,0 +1,77 @@
+#hanbueger {
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+}
+
+.p-hamburger {
+	display: flex;
+	margin: 15px 0 0 0px;
+	position: absolute;
+    top: 0;
+    right: 10px; /* 右端に配置 */
+	flex-direction: column;
+	cursor: pointer;
+	
+	text-align: right;
+}
+  
+.p-hamburger-line {
+	width: 30px;
+	height: 2px;
+	background-color: #E87C7C;
+	margin: 3px 0;
+	transition: 0.3s;
+}
+
+#hamburger-checkbox {
+	display: none;
+}
+
+/* 上段を傾ける */
+#hamburger-checkbox:checked+.p-hamburger .p-hamburger-line:nth-child(1) {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+/* 中段は非表示にする */
+#hamburger-checkbox:checked+.p-hamburger .p-hamburger-line:nth-child(2) {
+	opacity: 0;
+}
+
+/* 下段を傾ける */
+#hamburger-checkbox:checked+.p-hamburger .p-hamburger-line:nth-child(3) {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.hamburger-menu{
+	display: none;
+	position: absolute;
+}
+
+.hamburger-menu.active{
+	display: block;
+	flex-direction: column;
+	position:absolute;
+	top:100px;
+	right: 0; /* 右端に配置 */
+	background-color: #ffcc00;
+	width: 12%;
+	border-bottom: solid 6px #ff4500;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+
+.hamburger-menu.active ul{
+	padding-left: 20px;
+}
+
+.hamburger-menu.active li{
+	list-style: none;
+}
+
+.hamburger-menu.active a{
+	color: #660000;
+	text-decoration: none;
+}
