@@ -69,8 +69,7 @@ header{
 main{
 	z-index: 1;
 	background-color: #F0E68C;	
-	margin-left: 50px;
-	margin-right: 50px;
+	margin: 100px 50px;
 }
 
 .faketop{
