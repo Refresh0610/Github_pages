@@ -8,10 +8,9 @@
 
 .p-hamburger {
 	display: flex;
-	margin: 15px 0 0 0px;
+	margin: 25px 0 0 0px;
 	position: absolute;
-    top: 0;
-    right: 10px; /* 右端に配置 */
+   	right: 30px; /* 右端に配置 */
 	flex-direction: column;
 	cursor: pointer;
 	
