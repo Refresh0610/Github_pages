@@ -12,15 +12,49 @@
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 <body>
-    <div id="editor-container" style="height: 400px;"></div>
+    <header>
+        <h2 id="title" >イベントサイト</h2>
+        <div id="hamburger">
+            <input type="checkbox" id="hamburger-checkbox">
+            <label class="p-hamburger" for="hamburger-checkbox">
+                <span class="p-hamburger-line"></span>
+                <span class="p-hamburger-line"></span>
+                <span class="p-hamburger-line"></span>
+            </label>
+        </div>
+        <div class="hamburger-menu">
+            <ul class="list_humburger_menu">
+                <li><a href="Eventsite_Home.html">HOME</a></li>
+                <li><a href="EventInfo.html">イベント情報</a></li>
+                <li><a href="QRCodeReader.html">QR</a></li>
+                <li><a href="TextEditor.html">投稿</a></li>
+                <li><a href="Eventsite_Login.html">ログイン</a></li>
+                <li><input type="button" id="Q&A"></li>
+            </ul>
+        </div>
+        <script>
+            $('#hamburger-checkbox').change(function(){
+                $('.hamburger-menu').toggleClass('active');
+            });
 
-    <!-- Quill.jsのJavaScript -->
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-        // Quillエディタの初期化
-        var quill = new Quill('#editor-container', {
-            theme: 'snow'
-        });
-    </script>
+            $('#Q\\&A').click(function() {
+                alert('Q&Aページへ移動します');
+                $('#contact').toggleClass('active');
+            });
+        </script>
+    </header>
+    <main>
+        <div id="editor-container" style="height: 400px;"></div>
+    
+        <!-- Quill.jsのJavaScript -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <script>
+            // Quillエディタの初期化
+            var quill = new Quill('#editor-container', {
+                theme: 'snow'
+            });
+        </script>
+    </main>
+    
 </body>
 </html>
