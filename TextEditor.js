@@ -1,6 +1,6 @@
 ver container = '';
 
-function preview(container){
+function preview(){
   let x = "";
   if(x != "/n"){
     let x = $(".ql-editor").getHTML();
