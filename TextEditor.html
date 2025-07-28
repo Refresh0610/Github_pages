@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="HamburgerMenu.css">
     <link rel="stylesheet" href="Buttons.css">
     <link rel="stylesheet" href="TextEditor.css">
-    <script src="Functions.js"></script>
     <!-- Quill.jsのCSS -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="Functions.js"></script>
+    <!-- Quill.jsのJavaScript -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 <body>
     <header>
@@ -31,7 +33,7 @@
                 <li><a href="QRCodeReader.html">QR</a></li>
                 <li><a href="TextEditor.html">投稿</a></li>
                 <li><a href="Eventsite_Login.html">ログイン</a></li>
-                <li><input type="button" id="Q&A"></li>
+                <li><input type="button" id="Q&A" value="Q&A"></li>
             </ul>
         </div>
         <script>
@@ -50,12 +52,23 @@
             <div id="editor-container"></div>
         </div>
         <!-- Quill.jsのJavaScript -->
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
         <script>
             // Quillエディタの初期化
             var quill = new Quill('#editor-container', {
                 theme: 'snow'
             });
+        </script>
+        <!-- Preview　-->
+        <input tupe="button" id="preview">
+        <div class="preview-boad">
+            <div id="preview-container"></div>
+        </div>
+        <script>
+            $('#preview').click(function{
+                $('#preview-boad').toggleClass('active');
+                $('#preview-container').toggleClass('active');
+            }
         </script>
     </main>
     
