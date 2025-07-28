@@ -1,5 +1,8 @@
 .editor-boad{
-  background:#fff;
+    background: #fff;
+    width: 50%;
+    position: absolute;
+    left: 25%;
 }
 
 #editor-container{
