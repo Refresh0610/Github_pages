@@ -7,6 +7,6 @@ function preview(){
   Alert(html);
   /*if(x != "/n"){
     let title = "";
-    title += "";*/
-  }
+    title += "";
+  }*/
 }
