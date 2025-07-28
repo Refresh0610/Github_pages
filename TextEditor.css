@@ -1,6 +1,11 @@
 .editor-boad{
   background:#fff;
 }
+
+.ql-toolbar ql-snow{
+  width: 50%;
+}
+
 #editor-container{
   height: 400px;
   width: 50%;
