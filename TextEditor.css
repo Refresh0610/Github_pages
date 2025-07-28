@@ -1,3 +1,7 @@
 .editor-boad{
   background:#fff;
 }
+.editor-container{
+  height: 400px;
+  width: 50%;
+}
