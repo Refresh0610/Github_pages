@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
   const points = ["start", "end"];
   
-  for(let i = 0; i < 2;){
+  for(let i = 0; i < 2;　i++){
     updateYearOption(points[i]);
     updateMonthOption(points[i])
     updateDaysOption(points[i]);
