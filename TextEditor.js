@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
   const points = ["start", "end"];
   
-  for(let i = 0; i < 2;　i++){
-    updateYearOption(points[i]);
-    updateMonthOption(points[i])
-    updateDaysOption(points[i]);
-  };
+  points.forEach(point => { //fore(i=0; i<points.length; i++)と同じ
+    updateYearOption(point);
+    updateMonthOption(point);
+    updateDaysOption(point);
+  });
 };
 
 function verify() {//optionの値を取得
