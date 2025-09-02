@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>リッチテキストエディタ</title>
     
-    <link rel="stylesheet" href="Fundation.css">
-    <link rel="stylesheet" href="HamburgerMenu.css">
-    <link rel="stylesheet" href="Buttons.css">
-    <link rel="stylesheet" href="TextEditor.css">
+    <link rel="stylesheet" href="C:\xampp\htdocs\QRCodeReader\CSS\Fundation.css">
+    <link rel="stylesheet" href="C:\xampp\htdocs\QRCodeReader\CSS\HamburgerMenu.css">
+    <link rel="stylesheet" href="C:\xampp\htdocs\QRCodeReader\CSS\Buttons.css">
+    <link rel="stylesheet" href="C:\xampp\htdocs\QRCodeReader\CSS\TextEditor.css">
     <!-- Quill.jsのCSS -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <script src="Functions.js"></script>
-    <script src="TextEditor.js"></script>
+    
+    <!--<script src="C:\xampp\htdocs\QRCodeReader\JS\Functions.js"></script>-->
+    <script src="C:\xampp\htdocs\QRCodeReader\JS\TextEditor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Quill.jsのJavaScript -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 <body>
     <header>
-        <h2 id="title" >イベントサイト</h2>
+        <h2 class="title" >イベントサイト</h2>
         <div id="hamburger">
             <input type="checkbox" id="hamburger-checkbox">
             <label class="p-hamburger" for="hamburger-checkbox">
@@ -35,7 +36,7 @@
                 <li><a href="QRCodeReader.html">QR</a></li>
                 <li><a href="TextEditor.html">投稿</a></li>
                 <li><a href="Eventsite_Login.html">ログイン</a></li>
-                <li><input type="button" id="Q&A" value="Q&A"></li>
+                <li id="Q&A">Q&A</li>
             </ul>
         </div>
         <script>
@@ -51,6 +52,37 @@
     </header>
     <main>
         <div class="editor-boad">
+            <label for="event_title">タイトル</label>
+            <input type="text" class="" id="event_title" name="title" >
+            <label for="start_date">開催日</label>
+            <div id="start_date">
+                <label for="month">month</label>
+                <select class="start" id="start_month" name="start_month"></select>
+                <label for="day">day</label>
+                <select class="start" id="start_day" name="start_day"></select>
+                <label for="year">year</label>
+                <select class="start" id="start_year" name="start_year"></select>
+            </div>
+            <div id="end_date">
+                <label for="month">month</label>
+                <select class="end" id="end_month" name="end_month"></select>
+                <label for="day">day</label>
+                <select class="end" id="end_day" name="end_day"></select>
+                <label for="year">year</label>
+                <select class="end" id="end_year" name="end_year"></select>
+            </div>
+            <input type="button" id="verify" value="確認">
+            <script>
+                $('#start_month, #start_year, #end_month, #end_year').on("change", function(){
+                    point = this.className;
+                    alert(point);
+                    updateDaysOption(point);
+                });
+                
+                //optionの値を取得
+                $('#verify').click(verify);
+            </script>
+            <input type="">  
             <div id="editor-container"></div>
         </div>
         <!-- Quill.jsのJavaScript -->
@@ -61,21 +93,26 @@
                 theme: 'snow'
             });
         </script>
+
         <!-- Preview　-->
-        <input type="button" id="preview" value="プレビュー">
+        <input type="button" class="Displayswitch" id="preview" value="プレビュー">
+        <input type="button" class="Displayswitch" id="re-edit" value="再編集">
         <div class="preview-boad">
-            <div id="preview-container"></div>
+            <div class="preview-container"></div>
         </div>
         <script>
             $('#preview').click(function(){
-                $('#preview-boad').toggleClass('active');
-                $('#preview-container').toggleClass('active');
-            });
-            $('#preview').click(function(){
                 preview()
+            });
+            $('#re-edit').click(function(){
+                re_edit()
             });
         </script>
     </main>
     
 </body>
 </html>
+    
+</body>
+</html>
+
