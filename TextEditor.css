@@ -3,8 +3,61 @@
     width: 50%;
     position: absolute;
     left: 25%;
+    z-index: 0;
 }
+
+.editor-boad.inactive{
+    display: none;
+}
+
+.preview-boad{
+    display:none;
+}
+
+.preview-boad.active{
+    display:block;
+    position: absolute;
+    left: 25%;
+    z-index: 0;
+	height: 100%;
+	width: 50%;
+	padding: 8px 16px;
+    margin: 32px 0;
+    color: #000000;
+    background: #cccc66;
+    border: solid 4px #663300;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+
 
 #editor-container{
   height: 400px;
+}
+
+.Displayswitch{
+    width: 8%;
+    position: fixed;
+    left: 46%;
+    top: 85%;
+    z-index: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+#preview{
+    display: block;
+}
+
+#preview.inactive{
+    display: none;
+}
+
+#re-edit{
+    display: none;
+}
+
+#re-edit.active{
+    display: block;
 }
